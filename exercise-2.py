@@ -29,9 +29,12 @@ Jako ćwiczenie, spróbuj zaimplementować funkcję generate_adder(a), która zw
 funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b. 
 """
 
-def generate_adder(a):
-    ...
-
+def generate_adder(a):    
+    def adder(b):        
+        nonlocal a        
+        return a + b    
+    return adder
+    
 add_5 = generate_adder(5)
 add_10 = generate_adder(10)
 print(add_5(7))  # ==> 12
