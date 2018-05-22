@@ -13,6 +13,7 @@ wyrzucić.
 """
 
 numbers = [1, 2, 3, 4, 5, 6]
+
 def is_even(n):
     return n % 2 == 0
 
@@ -30,6 +31,7 @@ usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 """
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+
+mapped = map(lambda x: x.strip(), text)
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
+ 
