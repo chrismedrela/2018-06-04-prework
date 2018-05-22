@@ -30,7 +30,7 @@ funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b.
 """
 
 def generate_adder(a):
-    ...
+    return lambda b: a + b
 
 add_5 = generate_adder(5)
 add_10 = generate_adder(10)
