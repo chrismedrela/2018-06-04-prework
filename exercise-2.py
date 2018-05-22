@@ -30,7 +30,11 @@ funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b.
 """
 
 def generate_adder(a):
-    ...
+    const_component = a
+    def add(component):
+        nonlocal const_component
+        return const_component + component
+    return add
 
 add_5 = generate_adder(5)
 add_10 = generate_adder(10)
