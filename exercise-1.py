@@ -30,6 +30,5 @@ usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 """
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+mapped = map(lambda s: s.strip(), text)
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
