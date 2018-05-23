@@ -26,11 +26,13 @@ print(counter())  # ==> 3
 
 """
 Jako ćwiczenie, spróbuj zaimplementować funkcję generate_adder(a), która zwraca
-funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b. 
+funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b.
 """
 
 def generate_adder(a):
-    ...
+    def add_b(b):
+        return a + b
+    return add_b
 
 add_5 = generate_adder(5)
 add_10 = generate_adder(10)
