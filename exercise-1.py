@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 """
 W Pythonie funkcje są first-class citizens. Oznacza to, że argumentami do
 funkcji mogą być nie tylko dane (liczby, napisy, listy itd.), ale także inne
@@ -30,6 +29,9 @@ usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 """
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+def trim(s: str) -> str:
+    return s.strip()
+    
+mapped = map(trim, text)
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
+
