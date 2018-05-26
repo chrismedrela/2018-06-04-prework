@@ -9,13 +9,17 @@ Python zakłada, że chodzi o zmienną lokalną dla inc. Zwróć też uwagę, ż
 new_counter zwraca funkcję inc.
 """
 
+
 def new_counter():
     counter = 0
+
     def inc():
         nonlocal counter
         counter += 1
         return counter
+
     return inc
+
 
 counter = new_counter()
 counter_2 = new_counter()
@@ -29,11 +33,20 @@ Jako ćwiczenie, spróbuj zaimplementować funkcję generate_adder(a), która zw
 funkcję zagnieżdżoną adder(b) zwracającą sumę liczb a i b. 
 """
 
+
 def generate_adder(a):
-    ...
+    number = a
+
+    def add(b):
+        nonlocal number
+        return number + b
+
+    return add
+
 
 add_5 = generate_adder(5)
 add_10 = generate_adder(10)
-print(add_5(7))  # ==> 12
-print(add_5(15))  # ==> 20
-print(add_10(33))  # ==> 43
+
+print(bool(add_5(7) == 12))  # ==> 12
+print(bool(add_5(15) == 20))  # ==> 20
+print(bool(add_10(33) == 43))  # ==> 43
