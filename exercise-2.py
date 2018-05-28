@@ -37,3 +37,35 @@ add_10 = generate_adder(10)
 print(add_5(7))  # ==> 12
 print(add_5(15))  # ==> 20
 print(add_10(33))  # ==> 43
+
+# Adam P.
+
+>>> from functools import partial
+>>> generate_adder=lambda r: partial(lambda a,b: a+b,b=r)
+>>> generate_adder=lambda a: lambda b: a+b
+
+
+i.e.:
+[adam@synergia 2018-06-04-prework]$ python
+Python 2.7.5 (default, Apr 11 2018, 07:36:10)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-28)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> generate_adder=lambda a: lambda b: a+b
+>>> add_5 = generate_adder(5)
+>>> add_10 = generate_adder(10)
+>>> from __future__ import print_function
+>>> print(add_5(7))
+12
+>>> print(add_5(15))
+20
+>>> print(add_10(33))
+43
+>>> from functools import partial
+>>> generate_adder=lambda r: partial(lambda a,b: a+b,b=r)
+>>> print(add_10(33))
+43
+>>> print(add_5(15))
+20
+>>> print(add_5(7))
+12
+>>>
