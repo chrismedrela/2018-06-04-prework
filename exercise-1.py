@@ -5,7 +5,9 @@ W Pythonie funkcje są first-class citizens. Oznacza to, że argumentami do
 funkcji mogą być nie tylko dane (liczby, napisy, listy itd.), ale także inne
 funkcje. Tak samo funkcje mogą zwracać funkcje.
 
-Do czego to się przydaje? Klasyczny przykład to wbudowana funkcja filter.
+Do czego to się przydaje? 
+Do tworzenia generycznych realizacji argorytmów. 
+Klasyczny przykład to wbudowana funkcja filter.
 Pozwala ona na wyrzucenie z kolekcji elementów, które nie spełniają jakiegoś
 warunku. Warunkiem jest funkcja, która przyjmuje pojedynczy element i zwraca
 True lub False, w zależności od tego, czy dany element należy zostawić, czy go
@@ -30,6 +32,8 @@ usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 """
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+
+def trim_ws(text):
+    return text.strip()
+mapped = map(trim_ws, text)
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
