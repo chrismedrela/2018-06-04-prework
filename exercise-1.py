@@ -33,3 +33,7 @@ text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
 ...
 mapped = ...
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
+#Adam P.
+map(lambda a: a.strip(), text)
+# like 
+[a.strip() for a in text]
