@@ -27,9 +27,11 @@ przekształcony element (np. pomnożony przez dwa). Drugim argumentem jest
 kolekcja, której elementy chcemy przekształcić. Spróbuj przy pomocy tej funkcji
 usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 `text`). Hint: metoda .strip()
-"""
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+
+def return_without_blank(string):
+    return string.strip(" ")
+
+mapped = map(return_without_blank, text)
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
