@@ -4,7 +4,6 @@
 W Pythonie funkcje są first-class citizens. Oznacza to, że argumentami do
 funkcji mogą być nie tylko dane (liczby, napisy, listy itd.), ale także inne
 funkcje. Tak samo funkcje mogą zwracać funkcje.
-
 Do czego to się przydaje? Klasyczny przykład to wbudowana funkcja filter.
 Pozwala ona na wyrzucenie z kolekcji elementów, które nie spełniają jakiegoś
 warunku. Warunkiem jest funkcja, która przyjmuje pojedynczy element i zwraca
@@ -30,6 +29,13 @@ usunąć początkowe i końcowe białe znaki (spacje) z listy stringów (zmienna
 """
 
 text = ['   tekst', 'z niepotrzebnymi    ', '  spacjami  ']
-...
-mapped = ...
+
+
+def newstrip(txt):
+    return txt.strip()
+
+
+mapped = map(newstrip, text)
+
+
 print(list(mapped))  # ==> ['tekst', 'z niepotrzebnymi', 'spacjami']
